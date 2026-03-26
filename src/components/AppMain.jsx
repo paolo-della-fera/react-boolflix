@@ -3,6 +3,7 @@ import MovieList from "./MovieList"
 
 import axios from "axios"
 
+// recupero chiave API dal file
 const api_env = import.meta.env.VITE_API_KEY
 
 function AppMain() {
@@ -16,6 +17,7 @@ function AppMain() {
     function handleSubmit(e) {
         e.preventDefault()
 
+        // chiamate API  
         axios.get(api_url_movies)
             .then(res1 => {
                 axios.get(api_url_serie_tv)

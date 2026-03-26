@@ -8,10 +8,11 @@ const flags = {
 
 function MovieCard({ movie }) {
 
+    // funzione per far apparire l'immagine con la bandiera 
     function getFlagEmoji() {
 
         if (flags[movie.original_language] !== undefined) {
-            return <img src={flags[movie.original_language]}alt = "" />
+            return <img src={flags[movie.original_language]} alt="" />
         } else {
             return movie.original_language
         }
@@ -22,6 +23,7 @@ function MovieCard({ movie }) {
 
         <>
 
+            {/* film e serie tv card */}
             <div className="card">
                 <div className="card-body">
                     <h5 className="card-title">Titolo: {movie.title ? movie.title : movie.name}</h5>
