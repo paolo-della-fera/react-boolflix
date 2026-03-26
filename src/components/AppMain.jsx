@@ -9,13 +9,21 @@ function AppMain() {
     const [searchFilm, setSearchFilm] = useState('')
     const [film, setFilm] = useState([])
 
-    const api_url = `https://api.themoviedb.org/3/search/movie?api_key=${api_env}&query=${searchFilm}`
+    const api_url_movies = `https://api.themoviedb.org/3/search/movie?api_key=${api_env}&query=${searchFilm}`
+    const api_url_serie_tv = `https://api.themoviedb.org/3/search/tv?api_key=${api_env}&query=${searchFilm}`
 
 
     function handleSubmit(e) {
         e.preventDefault()
-        axios.get(api_url)
-            .then(res => setFilm(res.data.results))
+
+        axios.get(api_url_movies)
+            .then(res1 => {
+                axios.get(api_url_serie_tv)
+                    .then(res2 => {
+                        setFilm([...res1.data.results, ...res2.data.results])
+                    })
+            })
+
     }
 
 
