@@ -40,15 +40,24 @@ function MovieCard({ movie }) {
 
         <>
 
-            {/* film e serie tv card */}
-            <div className="card">
-                <div className="card-body">
-                    <h5 className="card-title">Titolo: {movie.title ? movie.title : movie.name}</h5>
-                    <p className="card-text">Titolo Originale: {movie.original_title ? movie.original_title : movie.original_name}</p>
-                    <p className="card-text">Lingua: {getFlagEmoji()}</p>
-                    <p className="card-text">Voto: {voteStars()} </p>
-                    <img src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`} alt="" />
+            <div className="container mt-3">
+
+                {/* film e serie tv card */}
+                <div className="movie-card">
+                    <img
+                        className="movie-card__poster"
+                        src={`https://image.tmdb.org/t/p/w342${movie.poster_path}`}
+                        alt={movie.title || movie.name}
+                    />
+                    <div className="movie-card__overlay">
+                        <h5>{movie.title ? movie.title : movie.name}</h5>
+                        <p>Titolo originale: {movie.original_title ? movie.original_title : movie.original_name}</p>
+                        <p className="movie-card__flag">Lingua: {getFlagEmoji()}</p>
+                        <p>Voto: {voteStars()}</p>
+                        <p>{movie.overview}</p>
+                    </div>
                 </div>
+
             </div>
 
         </>

@@ -9,13 +9,16 @@ function MovieList({ movies }) {
 
         <>
 
-            <div>
+            <div className="row">
 
-                {/* iteriamo ogno componente della prop passata */}
                 {
-                    movies.map(movie => <MovieCard key={movie.id} movie={movie} />)
+                movies.map(movie => (
+                    <div className="col-4 col-md-3 col-lg-2" key={movie.id}>
+                        <MovieCard movie={movie} />
+                    </div>
+                ))
                 }
-                
+
             </div>
 
         </>
