@@ -19,6 +19,19 @@ body {
     min-height: 100vh;
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
 
 /* #region AppHeader */
 .navbar {
@@ -47,6 +60,7 @@ body {
     background-color: var(--primary-color);
     color: var(--text-color);
 }
+
 /* #endregion AppHeader */
 
 
@@ -59,6 +73,7 @@ main {
 .row {
     padding: 2rem 1rem;
 }
+
 /* #endregion AppMain */
 
 
@@ -119,4 +134,5 @@ main {
 .movie-card__overlay svg {
     color: gold;
 }
+
 /* #endregion MovieCard */
