@@ -27,14 +27,14 @@ function App() {
             setFilm([...res1.data.results, ...res2.data.results])
           })
       })
-
+    console.log("KEY:", process.env.REACT_APP_API_KEY);
   }
 
 
   return (
     <>
-      <AppHeader searchFilm={searchFilm} setSearchFilm={setSearchFilm} onSubmit={handleSubmit}/>
-      <AppMain movies={film}/>
+      <AppHeader searchFilm={searchFilm} setSearchFilm={setSearchFilm} onSubmit={handleSubmit} />
+      <AppMain movies={film} />
     </>
   )
 }
